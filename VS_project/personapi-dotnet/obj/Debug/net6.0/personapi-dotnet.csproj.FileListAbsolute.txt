@@ -585,3 +585,8 @@ C:\Users\USUARIO\Documents\GitHub\Laboratorios Arqui\personapi-dotnet\VS_project
 C:\Users\USUARIO\Documents\GitHub\Laboratorios Arqui\personapi-dotnet\VS_project\personapi-dotnet\obj\Debug\net6.0\personapi-dotnet.pdb
 C:\Users\USUARIO\Documents\GitHub\Laboratorios Arqui\personapi-dotnet\VS_project\personapi-dotnet\obj\Debug\net6.0\personapi-dotnet.genruntimeconfig.cache
 C:\Users\USUARIO\Documents\GitHub\Laboratorios Arqui\personapi-dotnet\VS_project\personapi-dotnet\obj\Debug\net6.0\ref\personapi-dotnet.dll
+D:\dev\Arqui\Lab1\personapi-dotnet\VS_project\personapi-dotnet\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\dev\Arqui\Lab1\personapi-dotnet\VS_project\personapi-dotnet\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\dev\Arqui\Lab1\personapi-dotnet\VS_project\personapi-dotnet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\dev\Arqui\Lab1\personapi-dotnet\VS_project\personapi-dotnet\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\dev\Arqui\Lab1\personapi-dotnet\VS_project\personapi-dotnet\obj\Debug\net6.0\personapi-dotnet.MvcApplicationPartsAssemblyInfo.cs

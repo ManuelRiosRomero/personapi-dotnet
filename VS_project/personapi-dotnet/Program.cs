@@ -1,10 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using personapi_dotnet.Models.Entities;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews(); 
+builder.Services.AddDbContext<PersonaDbContext>();
 
 var app = builder.Build();
 
