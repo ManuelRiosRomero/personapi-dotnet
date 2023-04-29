@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\Controllers",
+    "\\Models",
+    "\\Models\\Entities",
+    "\\Properties",
+    "\\wwwroot",
+    "\\wwwroot\\css",
+    "\\wwwroot\\js",
+    "\\wwwroot\\lib"
+  ],
+  "SelectedNode": "\\Program.cs",
+  "PreviewInSolutionExplorer": false
+}
