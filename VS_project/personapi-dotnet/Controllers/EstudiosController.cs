@@ -16,14 +16,19 @@ public class EstudiosController : Controller
         _context = context;
     }
 
-    // GET: Estudios
+    [HttpGet]
+    [ProducesResponseType(typeof(List<Estudio>), 200)]
     public async Task<IActionResult> Index()
     {
         Microsoft.EntityFrameworkCore.Query.IIncludableQueryable<Estudio, Profesion> personaDbContext = _context.Estudios.Include(e => e.CcPerNavigation).Include(e => e.IdProfNavigation);
-        return View(_context.Estudios.ToList());
+        return Ok(await _context.Estudios.ToListAsync());
     }
 
+
     // GET: Estudios/Details/5
+    [HttpGet("{id}")]
+    [ProducesResponseType(typeof(Estudio), 200)]
+    [ProducesResponseType(404)]
     public async Task<IActionResult> Details(int? id)
     {
         if (id == null || _context.Estudios == null)
@@ -44,6 +49,7 @@ public class EstudiosController : Controller
     }
 
     // GET: Estudios/Create
+    [HttpGet]
     public IActionResult Create()
     {
         ViewData["CcPer"] = new SelectList(_context.Personas, "Cc", "Cc");
@@ -56,6 +62,8 @@ public class EstudiosController : Controller
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
     [HttpPost]
     [ValidateAntiForgeryToken]
+    [ProducesResponseType(StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public async Task<IActionResult> Create([Bind("IdProf,CcPer,Fecha,Univer")] Estudio estudio)
     {
         if (ModelState.IsValid)
@@ -70,6 +78,9 @@ public class EstudiosController : Controller
     }
 
     // GET: Estudios/Edit/5
+    [HttpGet("Edit/{id}")]
+    [ProducesResponseType(typeof(Estudio), 200)]
+    [ProducesResponseType(typeof(void), 404)]
     public async Task<IActionResult> Edit(int? id)
     {
         if (id == null || _context.Estudios == null)
@@ -90,8 +101,11 @@ public class EstudiosController : Controller
     // POST: Estudios/Edit/5
     // To protect from overposting attacks, enable the specific properties you want to bind to.
     // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-    [HttpPost]
+    [HttpPut("{id}")]
     [ValidateAntiForgeryToken]
+    [ProducesResponseType(StatusCodes.Status204NoContent)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Edit(int id, [Bind("IdProf,CcPer,Fecha,Univer")] Estudio estudio)
     {
         if (id != estudio.IdProf)
@@ -125,6 +139,9 @@ public class EstudiosController : Controller
     }
 
     // GET: Estudios/Delete/5
+    [HttpGet]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
     public async Task<IActionResult> Delete(int? id)
     {
         if (id == null || _context.Estudios == null)
@@ -147,6 +164,9 @@ public class EstudiosController : Controller
     // POST: Estudios/Delete/5
     [HttpPost, ActionName("Delete")]
     [ValidateAntiForgeryToken]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status404NotFound)]
+    [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> DeleteConfirmed(int id)
     {
         if (_context.Estudios == null)
